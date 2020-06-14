@@ -1,9 +1,10 @@
 import React from "react";
 import "./styles/CampusView.css";
 import { Link } from "react-router-dom";
-// import { StudentNameListContainer } from "../containers";
+import { CampusNameContainer } from "../containers";
 
 const StudentView = (props) => {
+  console.log(props.student)
   return (
     <>
       <img src={props.student.imageUrl} alt={props.student.firstname} />
@@ -12,7 +13,7 @@ const StudentView = (props) => {
 
       <p>{props.student.gpa}</p>
 
-      {/* <StudentNameListContainer students={props.student.students} /> */}
+      <CampusNameContainer campus={props.student.campus} />
 
       <Link className="edit-link" to={`/students/${props.student.id}/edit`}>
         Edit
