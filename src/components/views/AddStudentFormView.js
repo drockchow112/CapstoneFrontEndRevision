@@ -1,33 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const AddCampusFormView = (props) => {
+const AddStudentFormView = (props) => {
   return (
     <div>
       <form onSubmit={props.handleSubmit}>
         <div>
-          Name:{" "}
+          firstName:{" "}
           <input
-            value={props.name}
-            name="name"
+            value={props.firstName}
+            name="firstName"
             onChange={props.handleChange}
             required
           ></input>
         </div>
         <div>
-          Address:{" "}
+          lastName:{" "}
           <input
-            value={props.address}
-            name="address"
+            value={props.lastName}
+            name="lastName"
             onChange={props.handleChange}
             required
           ></input>
         </div>
         <div>
-          Description:{" "}
+          email:{" "}
           <input
-            value={props.description}
-            name="description"
+            type="email"
+            value={props.email}
+            name="email"
             onChange={props.handleChange}
             required
           ></input>
@@ -40,19 +41,29 @@ const AddCampusFormView = (props) => {
             onChange={props.handleChange}
           ></input>
         </div>
-        <button>Create Campus</button>
+        <div>
+          gpa:{" "}
+          <input
+            type="number"
+            value={props.gpa}
+            name="gpa"
+            onChange={props.handleChange}
+          ></input>
+        </div>
+        <button>Add student</button>
       </form>
     </div>
   );
 };
 
-AddCampusFormView.propTypes = {
+AddStudentFormView.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  address: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
+  //gpa:PropTypes.string.isRequired,
 };
 
-export default AddCampusFormView;
+export default AddStudentFormView;
