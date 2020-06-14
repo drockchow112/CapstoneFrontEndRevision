@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const AllStudentsView = (props) => {
+    console.log("student"+props.allStudents);
   if (!props.allStudents.length) {
     return <div className="all-campuses">There are no students</div>;
   }
@@ -16,7 +17,7 @@ const AllStudentsView = (props) => {
             <h1>{student.firstName}</h1>
           </Link>
           {/* <img src={student.imageUrl} width="200px" alt={student.name} /> */}
-          <p>{student.campusId.length} campus</p>
+          {/* <p>{student.campusId.length} campus</p> */}
           <button onClick={() => props.handleDelete(student.id)}>Delete</button>
         </div>
       ))}
