@@ -1,7 +1,10 @@
 import React from "react";
 import "./styles/CampusView.css";
 import { Link } from "react-router-dom";
-import { CampusNameContainer } from "../containers";
+import { 
+  CampusNameContainer,
+  AddCampusToStudentContainer,
+} from "../containers";
 
 const StudentView = (props) => {
   console.log(props.student)
@@ -14,6 +17,11 @@ const StudentView = (props) => {
       <p>{props.student.gpa}</p>
 
       <CampusNameContainer campus={props.student.campus} />
+
+      <AddCampusToStudentContainer
+        studentId={props.student.id}
+        handleEnrollStudent={props.handleEnrollStudent}
+      />
 
       <Link className="edit-link" to={`/students/${props.student.id}/edit`}>
         Edit

@@ -23,10 +23,10 @@ class AddStudentToCampusContainer extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.handleEnrollStudent(this.props.campusId, this.state.studentId);
+   
   };
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <h3>Hello from AddStudentToCampusContainer</h3>
@@ -37,7 +37,6 @@ class AddStudentToCampusContainer extends Component {
             {this.props.allStudents
               .filter((s) => s.campusId !== this.props.campusId)
               .map((student) => {
-                console.log(student.campusId);
                 return (
                   <option value={student.id} key={student.id}>
                     {student.firstName}
