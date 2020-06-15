@@ -12,7 +12,7 @@ class AddStudentFormContainer extends Component {
       lastName: "",
       email: "",
       imageUrl: "",
-      Gpa:0,
+      gpa:0,
       isValidName: false,
       errors: {},
     };

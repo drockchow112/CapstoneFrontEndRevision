@@ -20,6 +20,7 @@ class CampusContainer extends Component {
 
   handleEnrollStudent = (campusId, studentId) => {
     this.props.enrollStudent(campusId, studentId);
+    alert("reflash the page");
   };
 
   render() {
