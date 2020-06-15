@@ -11,7 +11,7 @@ class AddStudentFormContainer extends Component {
       firstName: "",
       lastName: "",
       email: "",
-      imageUrl: "",
+      imageUrl: "https://via.placeholder.com/480x240?text=Placeholder",
       gpa:0,
       isValidName: false,
       errors: {},

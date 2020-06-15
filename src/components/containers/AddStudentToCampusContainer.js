@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchAllStudentsThunk } from "../../thunks";
 
@@ -29,7 +28,7 @@ class AddStudentToCampusContainer extends Component {
   render() {
     return (
       <div>
-        <h3>Hello from AddStudentToCampusContainer</h3>
+        <h3>Add Student To This Campus</h3>
 
         <form onSubmit={this.handleSubmit}>
           <select name="studentId" onChange={this.handleChange}>
@@ -43,8 +42,8 @@ class AddStudentToCampusContainer extends Component {
                   </option>
                 );
               })}
-          </select>
-          <button type="submit">Enroll Student</button>
+          </select> 
+          <button className="btn btn-primary" type="submit">Enroll Student</button>
         </form>
       </div>
     );

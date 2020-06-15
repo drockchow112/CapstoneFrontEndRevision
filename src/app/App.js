@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="app">
         <NavBarContainer />
-        <header className="app-header">
+        <header className="">
           <RoutesContainer />
         </header>
       </div>

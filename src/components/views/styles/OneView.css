@@ -3,3 +3,10 @@
   padding: 0.5rem;
   margin: 0.5rem;
 }
+.width
+{
+max-width: 1300px;
+}
+.padding{
+  padding: 10px;
+}

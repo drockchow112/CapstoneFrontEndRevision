@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 const EditStudentFormView = (props) => {
   return (
     <div>
+       <h2><u>Edit {props.firstName} {props.lastName} information</u></h2>
+      <br/>
       <form onSubmit={props.handleSubmit}>
       <div>
           Firstname:{" "}
@@ -47,7 +49,7 @@ const EditStudentFormView = (props) => {
             onChange={props.handleChange}
           ></input>
         </div>
-        <button>edit student</button>
+        <button className="btn btn-primary">edit student</button>
       </form>
     </div>
   );

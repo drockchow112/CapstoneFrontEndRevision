@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 const AddCampusFormView = (props) => {
   return (
     <div>
+      <h2><u>Add New Campus</u></h2>
+      <br/>
       <form onSubmit={props.handleSubmit}>
         <div>
           Name:{" "}
@@ -40,7 +42,8 @@ const AddCampusFormView = (props) => {
             onChange={props.handleChange}
           ></input>
         </div>
-        <button>Create Campus</button>
+        <br/>
+        <button className="btn btn-primary">Create Campus</button>
       </form>
     </div>
   );
