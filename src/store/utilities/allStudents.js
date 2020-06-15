@@ -1,5 +1,4 @@
 import axios from "axios";
-
 // const BASE_URL =
 //   "https://cors-anywhere.herokuapp.com/" + "http://localhost:3001";
 
@@ -8,8 +7,10 @@ const FETCH_ALL_STUDENTS = "FETCH_ALL_STUDENTS";
 const ADD_STUDENT = "ADD_STUDENT";
 const EDIT_STUDENT = "EDIT_STUDENT";
 const DELETE_STUDENT = "DELETE_STUDENT";
+const ENROLL_STUDENT = "ENROLL_STUDENT";
 
 // ACTION CREATORS;
+
 const fetchAllStudents = (students) => {
   return {
     type: FETCH_ALL_STUDENTS,
@@ -30,15 +31,21 @@ const editstudent = (student) => {
     payload: student,
   };
 };
-
 const deletestudent = (id) => {
   return {
     type: DELETE_STUDENT,
     payload: id,
   };
 };
+const enrollStudent = (student) => {
+  return {
+    type: ENROLL_STUDENT,
+    payload: student,
+  };
+};
 
 // THUNK CREATORS;
+
 export const fetchAllStudentsThunk = () => (dispatch) => {
   return axios
     .get("/api/students")
@@ -46,7 +53,6 @@ export const fetchAllStudentsThunk = () => (dispatch) => {
     .then((students) => dispatch(fetchAllStudents(students)))
     .catch((err) => console.log(err));
 };
-
 export const addStudentThunk = (student, ownProps) => (dispatch) => {
   return axios
     .post("/api/students", student)
@@ -65,7 +71,13 @@ export const editStudentThunk = (id, student) => (dispatch) => {
     .then((updatedstudent) => dispatch(editstudent(updatedstudent)))
     .catch((err) => console.log(err));
 };
-
+export const enrollStudentThunk = (campusId, studentId) => (dispatch) => {
+  return axios
+    .put(`/api/students/${studentId}`, { campusId: campusId })
+    .then((res) => res.data)
+    .then((student) => dispatch(enrollStudent(student)))
+    .catch((err) => console.log(err));
+};
 export const deleteStudentThunk = (id) => (dispatch) => {
   return axios
     .delete(`/api/students/${id}`)
@@ -75,6 +87,7 @@ export const deleteStudentThunk = (id) => (dispatch) => {
 };
 
 // REDUCER;
+
 const reducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_ALL_STUDENTS:
@@ -82,12 +95,16 @@ const reducer = (state = [], action) => {
     case ADD_STUDENT:
       return [...state, action.payload];
     case EDIT_STUDENT:
-        return state.map((student) =>
+      return state.map((student) =>
         student.id === action.payload.id ? action.payload : student
       );
+    case ENROLL_STUDENT:
+      return state.map((student) =>
+        student.id === action.payload.id ? action.payload : student
+        );
     case DELETE_STUDENT:
-      console.log(action.payload);
       return state.filter((student) => student.id !== action.payload);
+
     default:
       return state;
   }
