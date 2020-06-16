@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import { NavBarView } from "../views";
+import { NewNavBarView } from "../views";
 
 class NavBarContainer extends Component {
   render() {
-    return <NavBarView />;
+    return <NewNavBarView />;
   }
 }
 
