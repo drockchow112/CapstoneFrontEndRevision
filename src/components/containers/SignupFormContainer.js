@@ -17,11 +17,9 @@ class SignupFormContainer extends Component {
   }
 
   handleChange = (e) => {
-      this.setState({
-        [e.target.userName]: e.target.value,
-      });
-    if (e.target.userName === "userName") {
+    if (e.target.name === "userName") {
       this.setState({ userName: e.target.value }, this.validateName);
+      console.log(this.state.userName)
     } else {
       this.setState({
         [e.target.name]: e.target.value,
@@ -30,16 +28,16 @@ class SignupFormContainer extends Component {
   };
 
   validateName = () => {
+      //check is the userName length great than 5
     const { userName } = this.state;
     let errors = { ...this.state.errors };
     let isValidName = true;
     if (userName.length < 6) {
       isValidName = false;
-      errors.userName = "Invalid userName";
+      errors.userName = "Invalid username";
     }
-
     if (isValidName) {
-      errors.userName = "valid userName";
+      errors.userName = "valid username";
     }
     this.setState({ isValidName, errors });
   };
@@ -48,7 +46,6 @@ class SignupFormContainer extends Component {
     e.preventDefault();
     if (this.state.isValidName) this.props.addUser(this.state);
   };
-
   render() {
     return (
       <>
@@ -67,7 +64,6 @@ class SignupFormContainer extends Component {
 }
 
 const mapDispatch = (dispatch, ownProps) => {
-    console.log("map")
   return {
     addUser: (User) => dispatch(addUserThunk(User, ownProps)),
   };

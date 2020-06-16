@@ -31,6 +31,7 @@ const AllUsersView = props => {
                 </p>
               </div>
             </div>
+
           </div>
         ))}
       </div>
