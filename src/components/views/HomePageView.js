@@ -6,9 +6,37 @@ const HomePageView =()=> {
 
     return (
       <div>
-        <img src="https://via.placeholder.com/150" alt="app logo"></img>
+         <div class="row content">
+    <div class="col-sm-2 sidenav">
+    <table>
+          <tr>
+            <th> History
+              <td>
+              <img src="https://via.placeholder.com/150" alt="app logo"></img>              </td>
+            </th>
+          </tr>
+          <tr>
+            <td>
+            <img src="https://via.placeholder.com/150" alt="app logo"></img>            </td>
+          </tr>
+          <tr>
+            <td>
+            <img src="https://via.placeholder.com/150" alt="app logo"></img>            </td>
+          </tr>
+          <tr>
+            <td>
+            <img src="https://via.placeholder.com/150" alt="app logo"></img>            </td>
+          </tr>
+        </table>
+        </div>
+        </div>
+        
+        
         <h1>Home Page is Blank</h1>
-
+        <div class="container-fluid text-center">    
+  
+    </div>
+ 
         <Link to="/signup">Sign Up Page</Link>
       </div>
     );
