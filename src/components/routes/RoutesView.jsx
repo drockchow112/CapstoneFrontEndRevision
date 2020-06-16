@@ -1,36 +1,14 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import {
-  AllCampusesContainer,
-  AllStudentsContainer,
-  CampusContainer,
-  StudentContainer,
-  AddCampusFormContainer,
-  AddStudentFormContainer,
-  EditCampusFormContainer,
-  EditStudentFormContainer,
+  
+  SignupFormContainer,
 } from "../containers";
 
 const RoutesView = () => {
   return (
     <Switch>
-      <Route exact path="/" component={AllCampusesContainer} />
-      <Route exact path="/campuses" component={AllCampusesContainer} />
-      <Route exact path="/campuses/new" component={AddCampusFormContainer} />
-      <Route exact path="/campuses/:id" component={CampusContainer} />
-      <Route
-        exact
-        path="/campuses/:id/edit"
-        component={EditCampusFormContainer}
-      />
-      <Route exact path="/students" component={AllStudentsContainer}/>
-      <Route exact path="/students/new" component={AddStudentFormContainer}/>
-      <Route exact path="/students/:id" component={StudentContainer}/>
-      <Route
-        exact
-        path="/students/:id/edit"
-        component={EditStudentFormContainer}
-        />
+      <Route exact path="/signup" component={SignupFormContainer} />
     </Switch>
   );
 };
