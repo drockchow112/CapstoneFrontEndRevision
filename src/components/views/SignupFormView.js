@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const SignupFormView = (props) => {
+    console.log(props)
   return (
     <div>
       <h2><u>Sign Up</u></h2>
@@ -28,7 +29,7 @@ const SignupFormView = (props) => {
         <div>
         email:{" "}
           <input
-            type="email"
+            //type="email"
             value={props.email}
             name="email"
             onChange={props.handleChange}

@@ -17,11 +17,14 @@ class SignupFormContainer extends Component {
   }
 
   handleChange = (e) => {
+      this.setState({
+        [e.target.userName]: e.target.value,
+      });
     if (e.target.userName === "userName") {
       this.setState({ userName: e.target.value }, this.validateName);
     } else {
       this.setState({
-        [e.target.userName]: e.target.value,
+        [e.target.name]: e.target.value,
       });
     }
   };
@@ -34,6 +37,7 @@ class SignupFormContainer extends Component {
       isValidName = false;
       errors.userName = "Invalid userName";
     }
+
     if (isValidName) {
       errors.userName = "valid userName";
     }
@@ -63,6 +67,7 @@ class SignupFormContainer extends Component {
 }
 
 const mapDispatch = (dispatch, ownProps) => {
+    console.log("map")
   return {
     addUser: (User) => dispatch(addUserThunk(User, ownProps)),
   };
