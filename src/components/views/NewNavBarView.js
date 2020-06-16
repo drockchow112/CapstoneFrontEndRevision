@@ -11,9 +11,9 @@ class NewNavBarView extends Component {
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                Home{" "}
-              </a>
+              <Link to="/home" className="nav-link">
+                Home
+              </Link>
             </li>
             <li class="nav-item">
               <Link to="/users" className="nav-link">
