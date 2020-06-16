@@ -2,3 +2,4 @@
 export { default as NavBarContainer } from "./NavBarContainer";
 export {default as SignupFormContainer}from "./SignupFormContainer";
 export {default as AllUsersContainer}from "./AllUsersContainer";
+export {default as UserContainer}from "./UserContainer";

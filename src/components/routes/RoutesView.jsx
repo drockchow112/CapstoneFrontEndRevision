@@ -4,6 +4,7 @@ import {
   
   SignupFormContainer,
    AllUsersContainer,
+   UserContainer,
 } from "../containers";
 
 const RoutesView = () => {
@@ -11,6 +12,7 @@ const RoutesView = () => {
     <Switch>
       <Route exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/users" component={AllUsersContainer}/>
+      <Route exact path="/users/:id" component={UserContainer}/>
     </Switch>
   );
 };

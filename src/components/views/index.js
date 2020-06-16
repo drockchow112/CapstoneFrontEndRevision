@@ -2,3 +2,5 @@
 export { default as NavBarView } from "./NavBarView";
 export {default as SignupFormView}from "./SignupFormView";
 export {default as AllUsersView}from "./AllUsersView";
+export {default as UserView}from "./UserView";
+
