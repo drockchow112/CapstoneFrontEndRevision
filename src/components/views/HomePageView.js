@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { Link } from "react-router-dom";
 //basic Home page
-class HomePageView extends Component {
-  render() {
+const HomePageView =()=> {
+
     return (
       <div>
         <img src="https://via.placeholder.com/150" alt="app logo"></img>
@@ -12,7 +12,6 @@ class HomePageView extends Component {
         <Link to="/signup">Sign Up Page</Link>
       </div>
     );
-  }
 }
 
 export default HomePageView;
