@@ -24,7 +24,6 @@ const SignupFormView = (props) => {
           <input
           class="form-control"
             value={props.password}
-            type="password"
             name="password"
             type="password"
             onChange={props.handleChange}
