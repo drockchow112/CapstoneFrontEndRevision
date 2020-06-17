@@ -5,7 +5,7 @@ const NavBarView =(props)=> {
     return (
       <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-info">
         <a className="navbar-brand" href="#">
-          APP_NAME or APP_LOGO
+          CHEAPEST PRICE!
         </a>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav mr-auto">
