@@ -25,6 +25,11 @@ class NewNavBarView extends Component {
                 Sign Up
               </Link>
             </li>
+            <li class="nav-item">
+              <Link to="/login" className="nav-link">
+                Log In
+              </Link>
+            </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
             <input

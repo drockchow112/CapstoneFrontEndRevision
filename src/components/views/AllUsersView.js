@@ -15,7 +15,7 @@ const AllUsersView = props => {
           <div key={user.id} className="col mb-4">
             <div className="card width mx-auto">
               <div className="card-body">
-                <Link to={`/campuses/${user.id}`}>
+                <Link to={`/users/${user.id}`}>
                   <h5 className="card-title">{user.userName}</h5>
                 </Link>
                 <p className="card-text">
@@ -31,7 +31,6 @@ const AllUsersView = props => {
                 </p>
               </div>
             </div>
-
           </div>
         ))}
       </div>
