@@ -56,13 +56,9 @@ const NavBarView =(props)=> {
     );
 }
 
-<<<<<<< HEAD:src/components/views/NewNavBarView.js
-NewNavBarView.propTypes = {
+NavBarView.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
 };
 
-export default NewNavBarView;
-=======
 export default NavBarView;
->>>>>>> 28075a533c81f32a5a08734cb06f48bec918f47d:src/components/views/NavBarView.js
