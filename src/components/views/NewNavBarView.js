@@ -25,12 +25,14 @@ const NewNavBarView =(props)=> {
               </Link>
             </li>
           </ul>
-          <form className="form-inline mt-2 mt-md-0">
+          <form className="form-inline mt-2 mt-md-0" 
+            onSubmit={props.handleSubmit}>
             <input
               className="form-control mr-sm-2"
               type="text"
               placeholder="Search"
               aria-label="Search"
+              onChange={props.handleChange}
             ></input>
             <button
               className="btn btn-outline-light my-2 my-sm-0 bg-primary"
@@ -43,5 +45,10 @@ const NewNavBarView =(props)=> {
       </nav>
     );
 }
+
+NewNavBarView.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};
 
 export default NewNavBarView;
