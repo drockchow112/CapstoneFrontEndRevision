@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 const NavBarView =(props)=> {
     return (
       <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-info">
-        <a className="navbar-brand" href="#">
-          CHEAPEST PRICE!
-        </a>
+        <Link to="/home" className="navbar-brand">
+          CHEAPEST PRICE!</Link>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">

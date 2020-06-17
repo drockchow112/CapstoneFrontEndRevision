@@ -8,10 +8,7 @@ const CheckoutCartView =()=> {
 <div>
   
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">Cheapest Price!</h1>
-  <p class="lead">
-    Cheapest Price! is a 3rd party application that fetches items from across different stores and show you the item with the cheapest price!
-  </p>
+  <h1 class="display-4">Cheapest Prices Found!</h1>
 </div>
 <br></br>
 <div class="container">
