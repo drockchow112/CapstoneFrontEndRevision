@@ -21,6 +21,7 @@ const SignupFormView = (props) => {
           <input
             value={props.password}
             name="password"
+            type="password"
             onChange={props.handleChange}
             required
           ></input>
