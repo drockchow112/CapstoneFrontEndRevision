@@ -12,13 +12,20 @@ const fetchSearch = (search) => {
 };
 
 // Thunk Creators
-export const fetchSearchThunk = (category, item) => (dispatch) => {
+// export const fetchSearchThunk = (category, item) => (dispatch) => {
+//   return axios
+//     //get request is static for now
+//     //.get(`https://api.barcodelookup.com/v2/products?category=${category}&search=${item}&formatted=y&key=8d3lkvfc8flbza5fk624936rhbzx8y`)
+//     .get('https://api.barcodelookup.com/v2/products?search=shoes&formatted=y&key=8d3lkvfc8flbza5fk624936rhbzx8y')
+//     .then((res) => res.data)
+//     .then((search) => dispatch(fetchSearch(search)))
+//     .catch((err) => console.log(err));
+// };
+export const fetchSearchThunk = () => (dispatch) => {
   return axios
-    //get request is static for now
-    //.get(`https://api.barcodelookup.com/v2/products?category=${category}&search=${item}&formatted=y&key=8d3lkvfc8flbza5fk624936rhbzx8y`)
-    .get('https://api.barcodelookup.com/v2/products?search=shoes&formatted=y&key=8d3lkvfc8flbza5fk624936rhbzx8y')
+    .get("https://api.barcodelookup.com/v2/products?search=shoes&formatted=y&key=8d3lkvfc8flbza5fk624936rhbzx8y")
     .then((res) => res.data)
-    .then((search) => dispatch(fetchSearch(search)))
+    .then((items) => dispatch(fetchSearch(items)))
     .catch((err) => console.log(err));
 };
 

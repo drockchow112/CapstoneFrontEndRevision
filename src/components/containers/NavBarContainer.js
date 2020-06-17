@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-
+//import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import { NavBarView } from "../views";
+import { fetchSearchThunk } from "../../thunks";
 
 class NavBarContainer extends Component {
   constructor(props) {
@@ -16,11 +18,10 @@ class NavBarContainer extends Component {
 
 
 
-  componentDidMount() {
-    this.props.fetchSearch(this.props.match.params.id).then(({ payload }) => {
-      this.setState(payload);
-    });
-  }
+componentDidMount() {
+  this.props.fetchSearch();
+}
+
 
   handleChange = (e) => {
     this.setState({
@@ -39,7 +40,7 @@ class NavBarContainer extends Component {
 
   render() {
     return (
-      <NewNavBarView
+      <NavBarView
         search={this.state.search}
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
@@ -49,12 +50,13 @@ class NavBarContainer extends Component {
 }
 
 const mapState = (state) => {
-  return { campus: state.campus };
+  console.log(state)
+  return { state };
 };
 
 const mapDispatch = (dispatch) => {
   return {
-    fetchSearch: (id) => dispatch(fetchSearchThunk(id))
+    fetchSearch: () => dispatch(fetchSearchThunk())
   };
 };
 
