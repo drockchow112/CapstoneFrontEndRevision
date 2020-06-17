@@ -34,7 +34,7 @@ class SignupFormContainer extends Component {
     let isValidName = true;
     if (userName.length < 6) {
       isValidName = false;
-      errors.userName = "Invalid username";
+      errors.userName = "Invalid username, please enter more than 5 characters";
     }
     if (isValidName) {
       errors.userName = "valid username";
