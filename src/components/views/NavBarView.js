@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NewNavBarView =(props)=> {
+const NavBarView =(props)=> {
     return (
       <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-info">
         <a className="navbar-brand" href="#">
@@ -15,6 +15,11 @@ const NewNavBarView =(props)=> {
               </Link>
             </li>
             <li className="nav-item">
+              <Link to="/items" className="nav-link">
+                Product
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link to="/users" className="nav-link">
                 Users
               </Link>
@@ -22,6 +27,11 @@ const NewNavBarView =(props)=> {
             <li className="nav-item">
               <Link to="/signup" className="nav-link">
                 Sign Up
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/checkout" className="nav-link">
+                Checkout
               </Link>
             </li>
           </ul>
@@ -44,4 +54,4 @@ const NewNavBarView =(props)=> {
     );
 }
 
-export default NewNavBarView;
+export default NavBarView;
