@@ -20,12 +20,15 @@ class DisplaySearchContainer extends Component {
     };
   }
   componentDidMount() {
-    this.props.fetchSearch(this.props.match.params.search).then(({ payload }) => {
-      this.setState(payload);
+   /* this.props.fetchSearch(this.props.match.params.search).then(({ payload }) => {
+     this.setState(payload);
     });
+    */
+   console.log( this.props.fetchSearch() )
   }
 
   render() {
+      console.log("this is my props: "+props)
     return (
       <HomePageView
         productName={this.state.product_name}
@@ -38,6 +41,7 @@ class DisplaySearchContainer extends Component {
 }
 
 const mapState = (state) => {
+    console.log(state)
   return { state };
 };
 
@@ -51,9 +55,4 @@ DisplaySearchContainer.propTypes = {
   fetchSearch: PropTypes.func.isRequired,
 };
 
-
 export default connect(mapState, mapDispatch)(DisplaySearchContainer);
-
-
-
-}

@@ -15,8 +15,9 @@ const fetchSearch = (search) => {
 export const fetchSearchThunk = (text) => (dispatch) => {
   console.log( text )
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  const url=`https://api.barcodelookup.com/v2/products?search=${text}&formatted=y&key=7so7qtxl0qdcu4zfqibc7ywyijlzb`
-  console.log(url)
+  //const url=`https://api.barcodelookup.com/v2/products?search=${text}&formatted=y&key=7so7qtxl0qdcu4zfqibc7ywyijlzbq`
+  //const url = "https://pokeapi.co/api/v2/pokemon/ditto"
+  const url=`https://api.barcodelookup.com/v2/products?search=shoes&formatted=y&key=7so7qtxl0qdcu4zfqibc7ywyijlzbq`
   return axios
     .get(proxyurl+url)
     .then((res) => res.data)

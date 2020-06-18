@@ -1,8 +1,9 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
+import { checkPropTypes } from "prop-types";
 //basic Home page
-const HomePageView =()=> {
+const HomePageView =(props)=> {
 
     return (
       <div>
@@ -32,7 +33,7 @@ const HomePageView =()=> {
         </div>
         
         
-        <h1>Home Page is Blank</h1>
+        <h1>Home Page is Blank </h1>
         <div class="container-fluid text-center">    
   
     </div>
