@@ -6,53 +6,54 @@ import { fetchSearchThunk } from "../../thunks";
 
 //const { HomePageView } = require("../views");
 
-
 class DisplaySearchContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        //json data from api to load into state
-        productName: '',
-        images: '', 
-        storePrice: '',
-        imageUrl: '',
-        text: ""//shoes
+      //json data from api to load into state
+      productName: "",
+      images: "",
+      storePrice: "",
+      imageUrl: "",
+      text: "" //shoes
     };
   }
   componentDidMount() {
-   /* this.props.fetchSearch(this.props.match.params.search).then(({ payload }) => {
+    /* this.props.fetchSearch(this.props.match.params.search).then(({ payload }) => {
      this.setState(payload);
     });
     */
-   console.log( this.props.fetchSearch() )
+    console.log(this.props.fetchSearch());
   }
 
   render() {
-      console.log("this is my props: "+props)
+    console.log("this is my props: ");
+    console.log(this.props);
     return (
       <HomePageView
         productName={this.state.product_name}
         images={this.state.images[0]}
-        storePrice={this.state.stores[0].store_price}
+        // storePrice={this.state.stores[0].store_price}
         imageUrl={this.state.imageUrl}
       />
     );
   }
 }
 
-const mapState = (state) => {
-    console.log(state)
+const mapState = state => {
+  console.log("this is el state");
+  console.log(state);
   return { state };
 };
 
-const mapDispatch = (dispatch) => {
+const mapDispatch = dispatch => {
   return {
-    fetchSearch: (search) => dispatch(fetchSearchThunk(search))
+    fetchSearch: search => dispatch(fetchSearchThunk(search))
   };
 };
 
 DisplaySearchContainer.propTypes = {
-  fetchSearch: PropTypes.func.isRequired,
+  fetchSearch: PropTypes.func.isRequired
 };
 
 export default connect(mapState, mapDispatch)(DisplaySearchContainer);

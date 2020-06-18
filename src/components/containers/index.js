@@ -3,7 +3,8 @@ export { default as NavBarContainer } from "./NavBarContainer";
 export { default as SignupFormContainer } from "./SignupFormContainer";
 export { default as AllUsersContainer } from "./AllUsersContainer";
 export { default as HomePageContainer } from "./HomePageContainer";
-export {default as CheckoutCartContainer}from "./CheckoutCartContainer";
-export {default as UserContainer}from "./UserContainer";
-export {default as AllItemsContainer} from "./AllItemsContainer";
-
+export { default as CheckoutCartContainer } from "./CheckoutCartContainer";
+export { default as UserContainer } from "./UserContainer";
+export { default as AllItemsContainer } from "./AllItemsContainer";
+export { default as LogInFormContainer } from "./LogInFormContainer";
+export { default as DisplaySearchContainer } from "./DisplaySearchContainer";
