@@ -12,13 +12,15 @@ const fetchSearch = (search) => {
 };
 
 // Thunk Creators
-export const fetchSearchThunk = () => (dispatch) => {
+export const fetchSearchThunk = (insubmit) => (dispatch) => {
+  console.log( insubmit )
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  const url="https://api.barcodelookup.com/v2/products?search=shoes&formatted=y&key=8d3lkvfc8flbza5fk624936rhbzx8y"
+  const url=`https://api.barcodelookup.com/v2/products?search=${ insubmit }&formatted=y&key=8d3lkvfc8flbza5fk624936rhbzx8y`
+  console.log(url)
   return axios
     .get(proxyurl+url)
     .then((res) => res.data)
-    .then((items) => dispatch(fetchSearch(items)))
+    .then((search) => dispatch(fetchSearch(search)))
     .catch((err) => console.log(err));
 };
 
@@ -26,7 +28,6 @@ export const fetchSearchThunk = () => (dispatch) => {
 const reducer = (state = {}, action) => {
   switch (action.type) {
     case FETCH_SEARCH:
-      console.log(action.payload)
       return action.payload;
     default:
       return state;
