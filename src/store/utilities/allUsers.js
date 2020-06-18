@@ -1,93 +1,109 @@
 import axios from "axios";
 
+const initialState = {
+  userExists: false
+};
+
 // ACTION TYPES;
 const FETCH_ALL_USERS = "FETCH_ALL_USERS";
 const ADD_USER = "ADD_USER";
 const EDIT_USER = "EDIT_USER";
 const DELETE_USER = "DELETE_USER";
+const USER_EXISTS = "USER_EXISTS";
 
 // ACTION CREATORS;
-const fetchAllUser = (users) => {
+const fetchAllUser = users => {
   return {
     type: FETCH_ALL_USERS,
-    payload: users,
+    payload: users
   };
 };
 
-const addUser = (user) => {
+const addUser = user => {
   return {
     type: ADD_USER,
-    payload: user,
+    payload: user
   };
 };
 
-const editUser = (user) => {
+const editUser = user => {
   return {
     type: EDIT_USER,
-    payload: user,
+    payload: user
   };
 };
 
-const deleteUser = (id) => {
+const deleteUser = id => {
   return {
     type: DELETE_USER,
-    payload: id,
+    payload: id
+  };
+};
+
+const existingUser = () => {
+  return {
+    type: USER_EXISTS
   };
 };
 
 // THUNK CREATORS;
-export const fetchAllUsersThunk = () => (dispatch) => {
+export const fetchAllUsersThunk = () => dispatch => {
   return axios
     .get("/api/users")
-    .then((res) => res.data)
-    .then((users) => dispatch(fetchAllUser(users)))
-    .catch((err) => console.log(err));
+    .then(res => res.data)
+    .then(users => dispatch(fetchAllUser(users)))
+    .catch(err => console.log(err));
 };
 
-export const addUserThunk = (user, ownProps) => (dispatch) => {
+export const addUserThunk = (user, ownProps) => dispatch => {
   return axios
     .post("/api/users", user)
-    .then((res) => res.data)
-    .then((newUser) => {
+    .then(res => res.data)
+    .then(newUser => {
       const tweakedUser = { ...newUser, items: [] };
       dispatch(addUser(tweakedUser));
       ownProps.history.push(`/users/${newUser.id}`);
     })
-    .catch((err) => console.log(err));
+    .catch(err => dispatch(existingUser()));
 };
 
-export const editUserThunk = (id, user) => (dispatch) => {
+export const editUserThunk = (id, user) => dispatch => {
   return axios
     .put(`/api/users/${id}`, user)
-    .then((res) => res.data)
-    .then((updatedUser) => {
+    .then(res => res.data)
+    .then(updatedUser => {
       dispatch(editUser(updatedUser));
     })
-    .catch((err) => console.log(err));
+    .catch(err => console.log(err));
 };
 
-export const deleteUserThunk = (id) => (dispatch) => {
+export const deleteUserThunk = id => dispatch => {
   return axios
     .delete(`/api/users/${id}`)
-    .then((res) => res.data)
+    .then(res => res.data)
     .then(() => dispatch(deleteUser(id)))
-    .catch((err) => console.log(err));
+    .catch(err => console.log(err));
 };
 
 // REDUCER;
-const reducer = (state = [], action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ALL_USERS:
       return action.payload;
     case ADD_USER:
-      return [...state, action.payload];
+      return Object.assign({}, [...state, action.payload], {
+        userExists: false
+      });
     case EDIT_USER:
-      return state.map((user) =>
+      return state.allUsers.map(user =>
         user.id === action.payload.id ? action.payload : user
       );
-
     case DELETE_USER:
-      return state.filter((user) => user.id !== action.payload);
+      return state.allUsers.filter(user => user.id !== action.payload);
+    case USER_EXISTS:
+      return Object.assign({}, state, {
+        userExists: true
+      });
     default:
       return state;
   }
