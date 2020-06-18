@@ -12,10 +12,10 @@ const fetchSearch = (search) => {
 };
 
 // Thunk Creators
-export const fetchSearchThunk = (insubmit) => (dispatch) => {
-  console.log( insubmit )
+export const fetchSearchThunk = (text) => (dispatch) => {
+  console.log( text )
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  const url=`https://api.barcodelookup.com/v2/products?search=${ insubmit }&formatted=y&key=8d3lkvfc8flbza5fk624936rhbzx8y`
+  const url=`https://api.barcodelookup.com/v2/products?search=${text}&formatted=y&key=7so7qtxl0qdcu4zfqibc7ywyijlzb`
   console.log(url)
   return axios
     .get(proxyurl+url)
