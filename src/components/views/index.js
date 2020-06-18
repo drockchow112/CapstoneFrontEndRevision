@@ -6,4 +6,5 @@ export { default as HomePageView } from "./HomePageView";
 export { default as CheckoutCartView } from "./CheckoutCartView";
 export {default as UserView}from "./UserView";
 export {default as AllItemsView} from "./AllItemsView";
+export {default as AllProductsView} from "./AllProductsView";
 

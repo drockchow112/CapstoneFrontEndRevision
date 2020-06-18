@@ -15,7 +15,12 @@ const NavBarView =(props)=> {
             </li>
             <li className="nav-item">
               <Link to="/items" className="nav-link">
-                Product
+                items
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/products" className="nav-link">
+                Products
               </Link>
             </li>
             <li className="nav-item">
