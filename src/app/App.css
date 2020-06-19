@@ -17,7 +17,7 @@
   text-align: center;
 }
 .container {
-  max-width: 960px;
+  max-width: 850px;
 }
 
 .pricing-header {
@@ -25,8 +25,8 @@
 }
 
 .card-deck .card {
-  min-width: 220px;
-  max-width: 290px;
+  min-width: 250px;
+  max-width: 250px;
 }
 
 
