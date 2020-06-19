@@ -8,6 +8,9 @@ class App extends Component {
     return (
       <div className="app">
         <NavBarContainer />
+        <br></br>
+        <br></br>
+        <br></br>
         <header className="">
           <RoutesContainer />
         </header>

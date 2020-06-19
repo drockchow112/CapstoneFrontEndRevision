@@ -15,7 +15,7 @@ const fetchProduct = (product) => {
 // Thunk Creators
 export const fetchProductThunk = (id) => (dispatch) => {
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url=`https://api.barcodelookup.com/v2/products?barcode=${id}&formatted=y&key=3edb4rpxi9vtcbzl11oyo4cp5kygyx`
+    const url=`https://api.barcodelookup.com/v2/products?barcode=${id}&formatted=y&key=jroo1h6hg9rji3pm3k1kso7babhcyf`
   return axios
     .get(proxyurl+url)
     .then((res) => res.data.products[0])

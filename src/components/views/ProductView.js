@@ -9,11 +9,11 @@ const UserView = (props) => {
   if (props.product.stores) {
     storesDisplay = props.product.stores.map((store,id) => (
       <div key={id} className="col mb-4">
-        <div className="card width mx-auto">
+        <div className="card width mx-100px">
           <div className="card-body">
               <h5 className="card-title">{store.store_name}</h5>
             <div className="card-text">
-              <div>price: ${store.store_price}</div>
+              <div>Price: ${store.store_price}</div>
               <a href={store.product_url}>link</a>
             </div>
           </div>
@@ -25,6 +25,9 @@ const UserView = (props) => {
   }
   return (
     <>
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Cheapest Prices Found!</h1>
+    </div>
       <div className="card width mx-auto">
         <div className="row no-gutters">
           <div className="col-md-4">
@@ -40,17 +43,17 @@ const UserView = (props) => {
               <h1 className="card-title">{props.product.product_name}</h1>
 ​
               <h3 className="card-text">
-                <b>description:</b>
+                <b>Description: </b>
                 {props.product.description}
               </h3>
-              <p className="card-text">
-                <b>category:</b>
-                {props.product.description}
-              </p>
+              
             </div>
           </div>
         </div>
       </div>
+      <br></br>
+      <br></br>
+      <h1>Stores:</h1>
       {storesDisplay}
     </>
   );
