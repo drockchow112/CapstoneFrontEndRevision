@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "./styles/AllUsersView.css";
 
 const AllUsersView = props => {
   if (!props.allUsers.length) {
     return <div>There are no user</div>;
   }
-
+  console.log(props.allUsers)
   return (
     <div>
       <div className=" row row-cols-1 row-cols-md-3">

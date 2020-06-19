@@ -7,4 +7,5 @@ export {default as CheckoutCartContainer}from "./CheckoutCartContainer";
 export {default as UserContainer}from "./UserContainer";
 export {default as AllItemsContainer} from "./AllItemsContainer";
 export {default as AllProductsContainer} from "./AllProductsConatiner";
+export {default as ProductContainer} from "./ProductContainer";
 

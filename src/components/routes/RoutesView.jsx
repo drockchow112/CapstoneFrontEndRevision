@@ -8,6 +8,7 @@ import {
    CheckoutCartContainer,
    AllItemsContainer,
    AllProductsContainer,
+   ProductContainer,
 } from "../containers";
 
 const RoutesView = () => {
@@ -20,6 +21,7 @@ const RoutesView = () => {
       <Route exact path="/checkout" component={CheckoutCartContainer}/>
       <Route exact path="/items" component={AllItemsContainer}/>
       <Route exact path="/products" component={AllProductsContainer}/>
+      <Route exact path="/products/:id" component={ProductContainer}/>
     </Switch>
   );
 };

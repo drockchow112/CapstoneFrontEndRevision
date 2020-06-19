@@ -16,7 +16,7 @@ const AllProductsView = props => {
             <div className="card width mx-auto">
             <img className="card-img-top" src={product.images} width="200px" alt={product.product_name} />
               <div className="card-body">
-                <Link to={`/items/${product.barcode_number}`}>
+                <Link to={`/products/${product.barcode_number}`}>
 
                   <h5 className="card-title">{product.product_name}</h5>
                 </Link>
