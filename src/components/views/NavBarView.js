@@ -39,6 +39,11 @@ const NavBarView =(props)=> {
                 Checkout
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to="/products/s/search" className="nav-link">
+                search
+              </Link>
+            </li>
           </ul>
           <form className="form-inline mt-2 mt-md-0" onSubmit={props.handleSubmit}>
             <input

@@ -9,6 +9,7 @@ import {
    AllItemsContainer,
    AllProductsContainer,
    ProductContainer,
+   SearchProductsContainer,
 } from "../containers";
 
 const RoutesView = () => {
@@ -22,7 +23,7 @@ const RoutesView = () => {
       <Route exact path="/items" component={AllItemsContainer}/>
       <Route exact path="/products" component={AllProductsContainer}/>
       <Route exact path="/products/:id" component={ProductContainer}/>
-      {/* <Route exact path="/products/search/:id" component={ProductContainer}/> */}
+      <Route exact path="/products/s/search" component={SearchProductsContainer}/>
     </Switch>
   );
 };

@@ -5,3 +5,4 @@ export { default as user}from "../store/utilities/user";
 export {default as allItems}from "../store/utilities/allItems";
 export {default as allProducts} from "../store/utilities/allProducts.js";
 export {default as product} from "../store/utilities/product.js";
+export {default as searchProducts} from "../store/utilities/searchProducts.js";
