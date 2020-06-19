@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const NavBarView =(props)=> {
     return (
@@ -39,8 +40,11 @@ const NavBarView =(props)=> {
               </Link>
             </li>
           </ul>
-          <form className="form-inline mt-2 mt-md-0">
+          <form className="form-inline mt-2 mt-md-0" onSubmit={props.handleSubmit}>
             <input
+              value={props.search}
+              name="search"
+              onChange={props.handleChange}
               className="form-control mr-sm-2"
               type="text"
               placeholder="Search"
@@ -57,5 +61,9 @@ const NavBarView =(props)=> {
       </nav>
     );
 }
-
+NavBarView.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  search: PropTypes.string.isRequired,
+};
 export default NavBarView;
