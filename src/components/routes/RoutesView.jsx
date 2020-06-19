@@ -17,6 +17,7 @@ const RoutesView = () => {
     <Switch>
       <Route exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/home" component={HomePageContainer} />
+      <Route exact path="/" component={HomePageContainer} />
       <Route exact path="/users" component={AllUsersContainer}/>
       <Route exact path="/users/:id" component={UserContainer}/>
       <Route exact path="/checkout" component={CheckoutCartContainer}/>
