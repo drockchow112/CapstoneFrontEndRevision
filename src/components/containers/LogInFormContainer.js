@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { LogInFormView } from "../views";
-import { addUserThunk } from "../../thunks";
+import { logInUserThunk } from "../../thunks";
 
 class LogInFormContainer extends Component {
   constructor(props) {
@@ -10,11 +11,17 @@ class LogInFormContainer extends Component {
     this.state = {
       userName: "",
       password: "",
-      email: "",
       isValidName: false,
       errors: {}
     };
   }
+
+  redirect = (userName, password) => {
+    // this.props
+    //   .logInUser(userName, password)
+    //   .then(<Redirect to="/" />)
+    //   .catch(err => console.log("I'm not working."));
+  };
 
   handleChange = e => {
     if (e.target.name === "userName") {
@@ -44,7 +51,18 @@ class LogInFormContainer extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    if (this.state.isValidName) this.props.addUser(this.state);
+    if (this.state.isValidName) {
+      this.props
+        .logInUser(this.state.userName, this.state.password)
+        .then(() => {
+          console.log("you called?");
+          window.location.href = "/";
+        })
+        .catch(() => {
+          console.log("This is no bueno man.");
+        });
+    }
+    // let result = this.props.logInUser(this.state.userName, this.state.password);
   };
 
   render() {
@@ -65,14 +83,14 @@ class LogInFormContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("State is here!");
   console.log(state);
   return { userExists: state.allUsers.userExists };
 };
 
 const mapDispatch = (dispatch, ownProps) => {
   return {
-    addUser: User => dispatch(addUserThunk(User, ownProps))
+    logInUser: (userName, password) =>
+      dispatch(logInUserThunk(userName, password))
   };
 };
 
