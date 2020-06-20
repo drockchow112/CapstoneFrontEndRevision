@@ -20,7 +20,7 @@ const UserView = (props) => {
               {store.store_name}
             </li>
           </ul>
-          <a href={store.product_url} >
+          <a href={store.product_url} target="_blank">
             <button type="button" className="btn btn-lg btn-block btn-outline-primary">
                   Go to store
             </button>
@@ -39,7 +39,7 @@ const UserView = (props) => {
     <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 className="display-4">Cheapest Prices Found!</h1>
     </div>
-    <button onClick={props.handleSubmit}> add to favorite </button>
+    <button className="btn btn-success" onClick={props.handleSubmit}> add to favorite </button>
     <div class="card">
            
           <div className="card-body">      
