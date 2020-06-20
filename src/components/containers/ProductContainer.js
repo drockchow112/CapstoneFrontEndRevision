@@ -1,21 +1,41 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
-  fetchProductThunk,
+  fetchProductThunk,addItemThunk 
 } from "../../thunks";
 
 import { ProductView } from "../views";
 
 class UserContainer extends Component {
+
+  // constructor(props) {
+  //   super(props);
+  //   console.log(this.props.product)
+  //   this.state = {
+  //     item:this.props.product,
+  //   };
+  // }
+  handleSubmit = (e) => {
+    let item={
+      barcode:this.props.product.barcode_number ,
+      name:this.props.product.product_name,
+      imageUrl:this.props.product.images[0],
+      userId:1,
+
+    }
+    
+    e.preventDefault();
+    this.props.addItem(item);
+  };
   componentDidMount() {
-    console.log(this.props);
-    this.props.fetchUser(this.props.match.params.id);
+    this.props.fetchProduct(this.props.match.params.id);
   }
 
   render() {
     return (
       <ProductView
         product={this.props.product}
+        handleSubmit={this.handleSubmit}
       />
     );
   }
@@ -23,15 +43,15 @@ class UserContainer extends Component {
 
 // map state to props
 const mapState = (state) => {
-    console.log(state)
   return {
     product: state.product,
   };
 };
 
-const mapDispatch = (dispatch) => {
+const mapDispatch = (dispatch,ownProps) => {
   return {
-    fetchUser: (id) => dispatch(fetchProductThunk(id)),
+    fetchProduct: (id) => dispatch(fetchProductThunk(id)),
+    addItem:(Item)=>dispatch(addItemThunk(Item,ownProps)),
   };
 };
 

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const AllProductsView = props => {
@@ -20,14 +19,6 @@ const AllProductsView = props => {
 
                   <h5 className="card-title">{product.product_name}</h5>
                 </Link>
-                <p className="card-text">
-                  <button
-                    className="btn btn-outline-danger"
-                    onClick={() => props.handleDelete(product.barcode_number)}
-                  >
-                    Delete
-                  </button>
-                </p>
               </div>
             </div>
 

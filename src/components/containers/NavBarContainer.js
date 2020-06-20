@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { searchProductsThunk } from "../../thunks";
-
+import { withRouter } from "react-router";
 import { NavBarView } from "../views";
 
 class NavBarContainer extends Component {
@@ -39,4 +39,4 @@ const mapDispatch = (dispatch, ownProps) => {
 NavBarContainer.propTypes = {
   searchProducts: PropTypes.func.isRequired,
 };
-export default connect(null, mapDispatch)(NavBarContainer);
+export default withRouter(connect(null, mapDispatch)(NavBarContainer));

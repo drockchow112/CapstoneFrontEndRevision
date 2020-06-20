@@ -39,7 +39,7 @@ const UserView = (props) => {
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Cheapest Prices Found!</h1>
     </div>
-
+    <button onClick={props.handleSubmit}> add to favorite </button>
     <div class="card">
            
           <div class="card-body">      

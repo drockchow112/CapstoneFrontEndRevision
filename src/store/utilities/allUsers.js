@@ -45,10 +45,12 @@ export const fetchAllUsersThunk = () => (dispatch) => {
 };
 
 export const addUserThunk = (user, ownProps) => (dispatch) => {
+  console.log(user)
   return axios
     .post("/api/users", user)
     .then((res) => res.data)
     .then((newUser) => {
+      console.log(newUser)
       const tweakedUser = { ...newUser, items: [] };
       dispatch(addUser(tweakedUser));
       ownProps.history.push(`/users/${newUser.id}`);

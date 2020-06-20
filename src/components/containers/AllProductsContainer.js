@@ -6,6 +6,7 @@ import { AllProductsView } from "../views";
 
 // Smart container;
 class AllProductsContainer extends Component {
+
   componentDidMount() {
     this.props.fetchAllProducts();
   }
