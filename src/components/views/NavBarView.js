@@ -15,12 +15,14 @@ const NavBarView =(props)=> {
               </Link>
             </li>
             <li className="nav-item">
+
               <Link to="/products" className="nav-link">
                 Products
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/users/" className="nav-link">
+
                 Users
               </Link>
             </li>
@@ -30,18 +32,9 @@ const NavBarView =(props)=> {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/login" className="nav-link">
-                Login
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/checkout" className="nav-link">
-                Checkout
-              </Link>
-            </li>
-            <li className="nav-item">
+
               <Link to="/products/s/search" className="nav-link">
-                Search
+                Products
               </Link>
             </li>
             <li className="nav-item">

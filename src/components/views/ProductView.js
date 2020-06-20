@@ -26,7 +26,7 @@ const UserView = (props) => {
               {store.store_name}
             </li>
           </ul>
-          <a href={store.product_url} >
+          <a href={store.product_url} target="_blank">
             <button type="button" className="btn btn-lg btn-block btn-outline-primary">
                   Go to store
             </button>
@@ -46,6 +46,7 @@ const UserView = (props) => {
       <h1 className="display-4">Cheapest Prices Found!</h1>
     </div>
     {favoriteDisplay}
+
     <div class="card">
            
           <div className="card-body">      
