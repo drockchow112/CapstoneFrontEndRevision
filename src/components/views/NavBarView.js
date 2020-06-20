@@ -20,7 +20,7 @@ const NavBarView =(props)=> {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/users" className="nav-link">
+              <Link to="/users/" className="nav-link">
                 Users
               </Link>
             </li>

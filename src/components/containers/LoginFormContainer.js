@@ -33,7 +33,6 @@ class LoginFormContainer extends Component {
     let errors = { ...this.state.errors };
     let isValidUser = false;
     let id=0;
-    console.log(users)
     for(let i=0;i<users.length;i++){
        if(this.state.userName===users[i].userName&&this.state.password===users[i].password){
         isValidUser = true;

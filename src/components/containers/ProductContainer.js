@@ -20,7 +20,7 @@ class UserContainer extends Component {
       barcode:this.props.product.barcode_number ,
       name:this.props.product.product_name,
       imageUrl:this.props.product.images[0],
-      userId:1,
+      userId:this.props.user.id,
 
     }
     
@@ -43,7 +43,9 @@ class UserContainer extends Component {
 
 // map state to props
 const mapState = (state) => {
+  console.log(state)
   return {
+    user:state.user,
     product: state.product,
   };
 };
