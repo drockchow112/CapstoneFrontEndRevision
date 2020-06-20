@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchAllItemsThunk, deleteItemThunk } from "../../thunks";
-import { AllItemsView } from "../views";
+import { FavoriteView } from "../views";
 
 // Smart container;
-class AllUsersContainer extends Component {
+class FavoriteContainer extends Component {
   componentDidMount() {
     this.props.fetchAllItems();
   }
@@ -16,7 +16,7 @@ class AllUsersContainer extends Component {
 
   render() {
     return (
-      <AllItemsView
+      <FavoriteView
         allItems={this.props.allItems}
         handleDelete={this.handleDelete}
       />
@@ -40,11 +40,11 @@ const mapDispatch = (dispatch) => {
 };
 
 // Type check props;
-AllUsersContainer.propTypes = {
+FavoriteContainer.propTypes = {
   allItems: PropTypes.array.isRequired,
   fetchAllItems: PropTypes.func.isRequired,
   deleteItem: PropTypes.func.isRequired,
 };
 
 // Export our store-connected container by default;
-export default connect(mapState, mapDispatch)(AllUsersContainer);
+export default connect(mapState, mapDispatch)(FavoriteContainer);

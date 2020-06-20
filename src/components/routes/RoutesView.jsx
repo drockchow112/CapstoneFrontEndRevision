@@ -6,7 +6,7 @@ import {
    AllUsersContainer,
    UserContainer,
    CheckoutCartContainer,
-   AllItemsContainer,
+   FavoriteContainer,
    AllProductsContainer,
    ProductContainer,
    SearchProductsContainer,
@@ -21,7 +21,7 @@ const RoutesView = () => {
       <Route exact path="/users" component={AllUsersContainer}/>
       <Route exact path="/users/:id" component={UserContainer}/>
       <Route exact path="/checkout" component={CheckoutCartContainer}/>
-      <Route exact path="/items" component={AllItemsContainer}/>
+      <Route exact path="/favorite" component={FavoriteContainer}/>
       <Route exact path="/products" component={AllProductsContainer}/>
       <Route exact path="/products/:id" component={ProductContainer}/>
       <Route exact path="/products/s/search" component={SearchProductsContainer}/>

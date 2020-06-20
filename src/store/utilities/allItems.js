@@ -53,7 +53,7 @@ export const addItemThunk = (item, ownProps) => (dispatch) => {
       const tweakedUser = { ...newUser, items: [] };
       console.log(tweakedUser)
       dispatch(addItem(tweakedUser));
-      ownProps.history.push(`/items/`);
+      ownProps.history.push(`/favorite/`);
     })
     .catch((err) => console.log(err));
 };

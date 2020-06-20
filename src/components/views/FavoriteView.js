@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const AllItemsView = props => {
+const FavoriteView = props => {
     console.log(props)
   if (!props.allItems.length) {
     return <div>There are no items</div>;
@@ -38,8 +38,8 @@ const AllItemsView = props => {
   );
 };
 
-AllItemsView.propTypes = {
+FavoriteView.propTypes = {
   allItems: PropTypes.array.isRequired
 };
 
-export default AllItemsView;
+export default FavoriteView;
