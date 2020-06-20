@@ -9,4 +9,4 @@ export {default as FavoriteContainer} from "./FavoriteContainer";
 export {default as AllProductsContainer} from "./AllProductsContainer";
 export {default as ProductContainer} from "./ProductContainer";
 export {default as SearchProductsContainer}from "./SearchProductsContainer";
-
+export {default as LoginFormContainer}from "./LoginFormContainer"
