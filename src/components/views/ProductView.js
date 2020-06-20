@@ -20,7 +20,7 @@ const UserView = (props) => {
               {store.store_name}
             </li>
           </ul>
-          <a href={store.product_url} target="_blank">
+          <a href={store.product_url} >
             <button type="button" className="btn btn-lg btn-block btn-outline-primary">
                   Go to store
             </button>

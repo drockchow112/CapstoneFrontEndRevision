@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 
 const SignupFormView = (props) => {
   return (
-    <div class="center">
-      <body class="text-center">
+    <div className="center">
+      <div className="text-center">
       
-      <form class="form-signin" onSubmit={props.handleSubmit}>
-      <h2 class="h3 mb-3 font-weight-normal">Sign Up</h2>
+      <form className="form-signin" onSubmit={props.handleSubmit}>
+      <h2 className="h3 mb-3 font-weight-normal">Sign Up</h2>
       <br/>
         <div>
           Username:{" "}
           <input
-          class="form-control"
+          className="form-control"
             value={props.userName}
             name="userName"
             onChange={props.handleChange}
@@ -22,11 +22,10 @@ const SignupFormView = (props) => {
         <div>
           Password:{" "}
           <input
-          class="form-control"
+          className="form-control"
             value={props.password}
             type="password"
             name="password"
-            type="password"
             onChange={props.handleChange}
             required
           ></input>
@@ -34,7 +33,7 @@ const SignupFormView = (props) => {
         <div>
         email:{" "}
           <input
-          class="form-control"
+          className="form-control"
             type="email"
             value={props.email}
             name="email"
@@ -45,7 +44,7 @@ const SignupFormView = (props) => {
         <br/>
         <button className="btn btn-primary">Signup</button>
       </form>
-      </body>
+      </div>
     </div>
   );
 };

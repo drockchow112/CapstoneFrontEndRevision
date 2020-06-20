@@ -36,12 +36,12 @@ const NavBarView =(props)=> {
             </li>
             <li className="nav-item">
               <Link to="/products/s/search" className="nav-link">
-                search
+                Search
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/favorite" className="nav-link">
-                favorite
+                Favorite
               </Link>
             </li>
           </ul>
