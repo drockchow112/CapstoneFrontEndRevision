@@ -5,6 +5,12 @@ const UserView = (props) => {
   console.log(props.product.stores);
 
   let storesDisplay;
+  let favoriteDisplay;
+  if(props.user.id){
+    favoriteDisplay=<button onClick={props.handleSubmit}> add to favorite </button>
+  }else{
+    favoriteDisplay=null;
+  }
 
   if (props.product.stores) {
     
@@ -39,7 +45,7 @@ const UserView = (props) => {
     <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 className="display-4">Cheapest Prices Found!</h1>
     </div>
-    <button onClick={props.handleSubmit}> add to favorite </button>
+    {favoriteDisplay}
     <div class="card">
            
           <div className="card-body">      

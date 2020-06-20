@@ -31,7 +31,6 @@ class NavBarContainer extends Component {
 }
 
 const mapDispatch = (dispatch, ownProps) => {
-  console.log(ownProps)
   return {
     searchProducts: (Search) => dispatch(searchProductsThunk(Search, ownProps)),
   };

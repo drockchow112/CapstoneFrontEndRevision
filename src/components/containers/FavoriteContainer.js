@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchAllItemsThunk, deleteItemThunk } from "../../thunks";
 import { Link } from "react-router-dom";
-//import { FavoriteView } from "../views";
 
 // Smart container;
 class FavoriteContainer extends Component {
@@ -11,12 +10,7 @@ class FavoriteContainer extends Component {
     this.props.fetchAllItems();
   }
 
-  handleDelete = (id) => {
-    this.props.deleteItem(id);
-  };
-
   render() {
-    console.log(this.props)
     if(!this.props.user.id){
       return <div>
         <div>Login first</div>
@@ -43,7 +37,7 @@ class FavoriteContainer extends Component {
                 <p className="card-text">
                   <button
                     className="btn btn-outline-danger"
-                    onClick={() => this.props.handleDelete(item.id)}
+                    onClick={() => this.props.deleteItem(item.id)}
                   >
                     Delete
                   </button>
@@ -56,15 +50,9 @@ class FavoriteContainer extends Component {
         }
       </div>
     </div>
-      // <FavoriteView
-      //   allItems={this.props.allItems}
-      //   user={this.props.user}
-      //   handleDelete={this.handleDelete}
-      // />
     );
   }
 }
-
 // Map state to props;
 const mapState = (state) => {
   console.log(state)

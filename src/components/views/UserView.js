@@ -15,7 +15,6 @@ const UserView = (props) => {
           <h3 className="card-text"><b>email </b>{props.user.email}</h3>
           <p className="card-text"><b>password</b>{props.user.password}</p>
           <p  className="card-text"><button className="btn btn-outline-primary"><Link to={`/users/${props.user.id}/edit`}>Edit</Link></button>  
-          <button className="btn btn-outline-danger card-text" onClick={() => props.handleDelete(props.user.id)}> Delete</button>
           </p>
         </div>
     </div>

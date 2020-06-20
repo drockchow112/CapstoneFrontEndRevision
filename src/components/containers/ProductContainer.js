@@ -34,6 +34,7 @@ class UserContainer extends Component {
   render() {
     return (
       <ProductView
+        user={this.props.user}
         product={this.props.product}
         handleSubmit={this.handleSubmit}
       />
