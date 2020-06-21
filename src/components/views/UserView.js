@@ -19,6 +19,7 @@ const UserView = (props) => {
     </div>
   </div>
   </div>
+  <button onClick={props.handleSignout}> Sign out</button>
 
 
 
