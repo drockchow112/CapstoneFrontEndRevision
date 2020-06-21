@@ -13,7 +13,7 @@ const UserView = (props) => {
   if (props.product.stores) {
     
     storesDisplay = props.product.stores.map((store,id) => (
-      <div key={id} >{/**className="col mb-4">**/}
+      <div key={id} >
       <div className="card mb-4 shadow-sm">
         <div className="card-header">
           <h4 className="my-0 font-weight-normal">${store.store_price}</h4>
