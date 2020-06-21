@@ -12,7 +12,7 @@ const UserView = props => {
             {props.user.email}
           </h2>
           <button className="btn btn-outline-primary mr-2">
-            <Link to={`/users/${props.user.id}/edit`}>Edit</Link>
+            <Link to={`/users/${props.user.id}/edit`}>Edit Account Info</Link>
           </button>
           <button
             className="btn btn-outline-danger"
