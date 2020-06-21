@@ -22,8 +22,8 @@ const AllProductsView = props => {
               <img
                 className="card-img-top"
                 src={product.images}
-                width="200px"
-                height="400px"
+                width="150px"
+                height="300px"
                 alt={product.product_name}
               />
               <div className="card-body">

@@ -24,14 +24,23 @@ class FavoriteContainer extends Component {
     }
     return (
       <div>
-    
+        <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+          <h2 className="display-4">Favorite</h2>
+        </div>
+      <div className="container">  
       <div className=" row row-cols-1 row-cols-md-3">
         {this.props.allItems
         .filter((i) => i.userId === this.props.user.id)
         .map(item => (
           <div key={item.id} className="col mb-4">
-            <div className="card width mx-auto">
-            <img className="card-img-top" src={item.imageUrl} width="200px" alt={item.name} />
+            <div className="card h-100 mx-auto">
+            <img 
+              className="card-img-top" 
+              src={item.imageUrl} 
+              width="150px" 
+              height="300px"
+              alt={item.name} 
+            />
               <div className="card-body">
                 <Link to={`/products/${item.barcode}`}>
 
@@ -51,6 +60,7 @@ class FavoriteContainer extends Component {
           </div>
         ))
         }
+      </div>
       </div>
     </div>
     );

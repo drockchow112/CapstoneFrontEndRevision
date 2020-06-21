@@ -9,7 +9,7 @@ const UserView = props => {
         <div className="col-md-8 mx-auto">
           <h1>Welcome back, {props.user.userName}!</h1>
           <h2>
-            <b>Current Email: </b>
+            <b>Email: </b>
             {props.user.email}
           </h2>
           <button className="btn btn-outline-primary mr-2">
