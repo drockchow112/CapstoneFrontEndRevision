@@ -38,7 +38,6 @@ class UserContainer extends Component {
 
 // map state to props
 const mapState = (state) => {
-  console.log(state)
   return {
     user:state.user,
     product: state.product,

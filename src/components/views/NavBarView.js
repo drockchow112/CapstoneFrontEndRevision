@@ -37,11 +37,6 @@ const NavBarView =(props)=> {
                 Favorite
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/signup" className="nav-link">
-                Sign Up
-              </Link>
-            </li>
             {LoginDisplay}
           </ul>
           <form className="form-inline mt-2 mt-md-0" onSubmit={props.handleSubmit}>

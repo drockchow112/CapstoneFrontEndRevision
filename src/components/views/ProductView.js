@@ -5,7 +5,7 @@ const UserView = (props) => {
   let favoriteDisplay;
   //someone login
   if(props.user.id){
-    favoriteDisplay=<button onClick={props.handleSubmit}> add to favorite </button>
+    favoriteDisplay=<button className="btn btn-sm btn-success" onClick={props.handleSubmit}> Add to Favorite </button>
   }else{
     favoriteDisplay=null;
   }
@@ -24,7 +24,7 @@ const UserView = (props) => {
               {store.store_name}
             </li>
           </ul>
-          <a href={store.product_url} target="_blank">
+          <a href={store.product_url} >
             <button type="button" className="btn btn-lg btn-block btn-outline-primary">
                   Go to store
             </button>
@@ -45,7 +45,7 @@ const UserView = (props) => {
     </div>
     {favoriteDisplay}
 
-    <div class="card">
+    <div className="card">
            
           <div className="card-body">      
             <img 

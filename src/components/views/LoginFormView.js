@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const LoginFormView = (props) => {
   return (
@@ -33,6 +34,7 @@ const LoginFormView = (props) => {
         <br/>
         <button className="btn btn-primary">Login</button>
       </form>
+      <Link to="/signup">Don't have an account? Sign up here</Link>
       </div>
     </div>
   );
