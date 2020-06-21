@@ -7,7 +7,7 @@ const EditUserFormView = (props) => {
       <div className="text-center">
       
       <form className="form-signin" onSubmit={props.handleSubmit}>
-      <h2 className="h3 mb-3 font-weight-normal">Edit</h2>
+      <h2 className="h3 mb-3 font-weight-normal">Account Info</h2>
       <br/>
         <div>
           Username:{" "}
@@ -30,7 +30,7 @@ const EditUserFormView = (props) => {
           ></input>
         </div>
         <br/>
-        <button className="btn btn-primary">Edit</button>
+        <button className="btn btn-primary">Confirm</button>
       </form>
       </div>
     </div>
