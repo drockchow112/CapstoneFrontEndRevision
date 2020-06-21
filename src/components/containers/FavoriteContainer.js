@@ -68,7 +68,6 @@ class FavoriteContainer extends Component {
 }
 // Map state to props;
 const mapState = (state) => {
-  console.log(state)
   return {
     user:state.user,
     allItems: state.allItems,

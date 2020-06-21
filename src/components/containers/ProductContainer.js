@@ -7,14 +7,7 @@ import {
 import { ProductView } from "../views";
 
 class UserContainer extends Component {
- 
-  // constructor(props) {
-  //   super(props);
-  //   console.log(this.props.product)
-  //   this.state = {
-  //     item:this.props.product,
-  //   };
-  // }
+
   handleSubmit = (e) => {
     let item={
       barcode:this.props.product.barcode_number ,

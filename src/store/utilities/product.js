@@ -27,7 +27,6 @@ export const fetchProductThunk = (id) => (dispatch) => {
 const reducer = (state = {}, action) => {
   switch (action.type) {
     case FETCH_PRODUCT:
-        console.log(action.payload)
       return action.payload;
     default:
       return state;

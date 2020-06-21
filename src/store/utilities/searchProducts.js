@@ -20,7 +20,6 @@ export const searchProductsThunk = (search, ownProps) => (dispatch) => {
     .then((items) => {
 
       dispatch(searchProducts(items))
-      console.log(ownProps)
       ownProps.history.push("/products/s/search");
     })
     .catch((err) => console.log(err));
@@ -30,7 +29,6 @@ export const searchProductsThunk = (search, ownProps) => (dispatch) => {
 const reducer = (state = {}, action) => {
   switch (action.type) {
     case SEARCH_PRODUCTS:
-      console.log(action.payload)
       return action.payload;
     default:
       return state;

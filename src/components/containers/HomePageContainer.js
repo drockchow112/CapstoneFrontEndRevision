@@ -12,7 +12,6 @@ class HomePageContainer extends Component {
   }
 }
 const mapState = (state) => {
-  console.log(state)
 return {
   user: state.user,
 };

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SearchProductsView = props => {
-    console.log(props)
   if (!props.Products.length) {
     return <form className="form-inline mt-2 mt-md-0" onSubmit={props.handleSubmit}>
     

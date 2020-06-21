@@ -36,7 +36,6 @@ class SearchProductsContainer extends Component {
 }
 // Map state to props;
 const mapState = (state) => {
-    console.log(state)
   return {
     Products: state.searchProducts,
   };

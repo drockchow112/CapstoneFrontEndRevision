@@ -12,7 +12,6 @@ class AllProductsContainer extends Component {
   }
 
   render() {
-      //console.log(this.props.allProducts)
     return (
       <AllProductsView
         allProducts={this.props.allProducts}
@@ -23,7 +22,6 @@ class AllProductsContainer extends Component {
 
 // Map state to props;
 const mapState = (state) => {
-    console.log(state)
   return {
     allProducts: state.allProducts,
   };
