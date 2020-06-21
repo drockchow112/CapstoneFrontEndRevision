@@ -1,24 +1,27 @@
 import axios from "axios";
 
+const wordArr = ["Laptop", "Camera", "Table"];
+
 // Action Types
 const FETCH_ALL_PRODUCTS = "FETCH_ALL_PRODUCTS";
 
 // Action Creators
-const fetchAllProducts = (product) => {
+const fetchAllProducts = product => {
   return {
     type: FETCH_ALL_PRODUCTS,
-    payload: product,
+    payload: product
   };
 };
 // Thunk Creators
-export const fetchAllProductsThunk = () => (dispatch) => {
+export const fetchAllProductsThunk = () => dispatch => {
+  const item = wordArr[Math.floor(Math.random() * 3)];
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  const url="https://api.barcodelookup.com/v2/products?search=labtop&formatted=y&key=zv42zbe9jebxudhbmdtq9hor1320xc"
+  const url = `https://api.barcodelookup.com/v2/products?search=${item}&formatted=y&key=5ycswyro2jhl0kdbwk0dwh0n7uql6b`;
   return axios
-    .get(proxyurl+url)
-    .then((res) => res.data.products)
-    .then((items) => dispatch(fetchAllProducts(items)))
-    .catch((err) => console.log(err));
+    .get(proxyurl + url)
+    .then(res => res.data.products)
+    .then(items => dispatch(fetchAllProducts(items)))
+    .catch(err => console.log(err));
 };
 
 // Reducer
