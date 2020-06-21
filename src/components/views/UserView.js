@@ -11,9 +11,8 @@ const UserView = (props) => {
       </div>
       <div className="col-md-8">
         <div className="card-body">
-          <h1 className="card-title">{props.user.userName}</h1>
-          <h3 className="card-text"><b>email </b>{props.user.email}</h3>
-          <p className="card-text"><b>password</b>{props.user.password}</p>
+          <h1 className="card-title">UserName:{props.user.userName}</h1>
+          <h3 className="card-text"><b>Email: </b>{props.user.email}</h3>
           <p  className="card-text"><button className="btn btn-outline-primary"><Link to={`/users/${props.user.id}/edit`}>Edit</Link></button>  
           </p>
         </div>

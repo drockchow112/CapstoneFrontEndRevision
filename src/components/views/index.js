@@ -9,3 +9,4 @@ export {default as AllProductsView} from "./AllProductsView";
 export {default as ProductView} from "./ProductView";
 export {default as SearchProductsView} from "./SearchProductsView";
 export {default as LoginFormView}from "./LoginFormView";
+export {default as EditUserFormView}from "./EditUserFormView";

@@ -11,6 +11,7 @@ import {
    ProductContainer,
    SearchProductsContainer,
    LoginFormContainer,
+   EditUserFormContainer,
 } from "../containers";
 
 const RoutesView = () => {
@@ -27,6 +28,7 @@ const RoutesView = () => {
       <Route exact path="/products" component={AllProductsContainer}/>
       <Route exact path="/products/:id" component={ProductContainer}/>
       <Route exact path="/products/s/search" component={SearchProductsContainer}/>
+      <Route exact path="/users/:id/edit" component={EditUserFormContainer}/>
     </Switch>
   );
 };

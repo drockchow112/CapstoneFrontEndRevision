@@ -23,13 +23,19 @@ class NavBarContainer extends Component {
   };
   render() {
     return <NavBarView 
+    user={this.props.user}
     search={this.state.search}
     handleSubmit={this.handleSubmit}
     handleChange={this.handleChange}
     />;
   }
 }
-
+const mapState = (state) => {
+  console.log(state)
+  return {
+    user:state.user,
+  };
+};
 const mapDispatch = (dispatch, ownProps) => {
   return {
     searchProducts: (Search) => dispatch(searchProductsThunk(Search, ownProps)),
@@ -38,4 +44,4 @@ const mapDispatch = (dispatch, ownProps) => {
 NavBarContainer.propTypes = {
   searchProducts: PropTypes.func.isRequired,
 };
-export default withRouter(connect(null, mapDispatch)(NavBarContainer));
+export default withRouter(connect(mapState, mapDispatch)(NavBarContainer));
