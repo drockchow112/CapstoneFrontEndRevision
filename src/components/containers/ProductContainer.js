@@ -7,7 +7,7 @@ import {
 import { ProductView } from "../views";
 
 class UserContainer extends Component {
-
+ 
   // constructor(props) {
   //   super(props);
   //   console.log(this.props.product)
@@ -28,6 +28,7 @@ class UserContainer extends Component {
     this.props.addItem(item);
   };
   componentDidMount() {
+   
     this.props.fetchProduct(this.props.match.params.id);
   }
 

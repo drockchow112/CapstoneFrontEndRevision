@@ -32,9 +32,8 @@ const NavBarView =(props)=> {
               </Link>
             </li>
             <li className="nav-item">
-
-              <Link to="/products/s/search" className="nav-link">
-                Products
+              <Link to="/login" className="nav-link">
+                login
               </Link>
             </li>
             <li className="nav-item">

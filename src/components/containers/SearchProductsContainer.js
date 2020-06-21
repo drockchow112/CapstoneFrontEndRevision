@@ -23,14 +23,16 @@ class SearchProductsContainer extends Component {
   };
 
   render() {
-      console.log(this.props)
-    return <SearchProductsView 
+
+    return( 
+
+    <SearchProductsView 
     Products={this.props.Products}
     search={this.state.search}
     handleSubmit={this.handleSubmit}
     handleChange={this.handleChange}
-    />;
-  }
+    />
+    )}
 }
 // Map state to props;
 const mapState = (state) => {

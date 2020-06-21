@@ -8,7 +8,6 @@ class LoginFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id:0,
       userName: "",
       password: "",
       isValidUser: false,
@@ -36,7 +35,7 @@ class LoginFormContainer extends Component {
     for(let i=0;i<users.length;i++){
        if(this.state.userName===users[i].userName&&this.state.password===users[i].password){
         isValidUser = true;
-        id=users[i].id;
+        this.props.history.push(`/users/${users[i].id}`);
         break;
       }
     }
@@ -51,18 +50,13 @@ class LoginFormContainer extends Component {
 
   handleSubmit = (e) => {
      e.preventDefault();
-    this.validateUser();
-    console.log(this.state)
-    console.log(this.props)
-    if (this.state.isValidUser) this.props.history.push(`/users/${this.state.id}`);
-    //  if (this.state.isValidUser) this.props.fetchUser(this.state.id);
-     //ownProps.history.push(`/users/${user.id}`);
+    this.validateUser()
   };
   render() {
     return (
       <>
         {/* Can potentially be extracted into its own ErrorMessage component */}
-        {this.state.isValidUser ? "" : this.state.errors.userName}
+        {this.state.isValidUser ?``: this.state.errors.userName}
         <LoginFormView
           userName={this.state.userName}
           password={this.state.password}
