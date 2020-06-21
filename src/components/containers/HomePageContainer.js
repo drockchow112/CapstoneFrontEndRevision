@@ -1,11 +1,21 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
 
 import { HomePageView } from "../views";
 
 class HomePageContainer extends Component {
   render() {
-    return <HomePageView />;
+    return <HomePageView 
+    user={this.props.user}
+    />;
   }
 }
+const mapState = (state) => {
+  console.log(state)
+return {
+  user: state.user,
+};
+};
 
-export default HomePageContainer;
+export default connect(mapState)(HomePageContainer);

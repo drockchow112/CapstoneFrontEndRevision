@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import {
   HomePageContainer,
   SignupFormContainer,
-   AllUsersContainer,
    UserContainer,
    CheckoutCartContainer,
    FavoriteContainer,
@@ -21,7 +20,6 @@ const RoutesView = () => {
       <Route exact path="/login" component={LoginFormContainer} />
       <Route exact path="/home" component={HomePageContainer} />
       <Route exact path="/" component={HomePageContainer} />
-      <Route exact path="/users" component={AllUsersContainer}/>
       <Route exact path="/users/:id" component={UserContainer}/>
       <Route exact path="/checkout" component={CheckoutCartContainer}/>
       <Route exact path="/favorite" component={FavoriteContainer}/>

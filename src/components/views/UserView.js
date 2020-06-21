@@ -13,13 +13,15 @@ const UserView = (props) => {
         <div className="card-body">
           <h1 className="card-title">UserName:{props.user.userName}</h1>
           <h3 className="card-text"><b>Email: </b>{props.user.email}</h3>
-          <p  className="card-text"><button className="btn btn-outline-primary"><Link to={`/users/${props.user.id}/edit`}>Edit</Link></button>  
+          <p  className="card-text">
+            <button className="btn btn-outline-primary"><Link to={`/users/${props.user.id}/edit`}>Edit</Link></button>
+            <button className="btn btn-outline-danger"onClick={props.handleSignout}> Sign out</button>  
           </p>
         </div>
     </div>
   </div>
   </div>
-  <button onClick={props.handleSignout}> Sign out</button>
+  
 
 
 

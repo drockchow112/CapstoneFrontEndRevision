@@ -13,8 +13,10 @@ class FavoriteContainer extends Component {
   render() {
     if(!this.props.user.id){
       return <div>
-        <div>Login first</div>
-        <Link to="/login">Login</Link>
+        <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+          <h2 className="display-4">You Haven't Login Yet</h2>
+        </div>
+        <button className="btn btn-outline-primary"><Link to="/login">Login</Link></button>
         </div>
     }
     if (!this.props.allItems.length) {
@@ -22,6 +24,7 @@ class FavoriteContainer extends Component {
     }
     return (
       <div>
+    
       <div className=" row row-cols-1 row-cols-md-3">
         {this.props.allItems
         .filter((i) => i.userId === this.props.user.id)

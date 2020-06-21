@@ -2,8 +2,13 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 //basic Home page
-const HomePageView =()=> {
-
+const HomePageView =(props)=> {
+  let userDisplay;
+  if(props.user.id){
+    userDisplay=<h2>Welcome {props.user.userName}</h2>
+  }else{
+    userDisplay=<Link to="/signup">Sign Up to add items to your favorite!</Link>;
+  }
     return (
       <div>
         <img src="https://i.imgur.com/NhmdH6X.png" alt="app logo" className="logo"></img>
@@ -15,7 +20,7 @@ const HomePageView =()=> {
   </p>
 </div>
 <br></br>
-        <Link to="/signup">Sign Up to add items to your favorite!</Link>
+          {userDisplay}
       </div>
     );
 }

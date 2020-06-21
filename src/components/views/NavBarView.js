@@ -6,11 +6,11 @@ const NavBarView =(props)=> {
   let LoginDisplay;
   if(props.user.id){
     LoginDisplay=<li className="nav-item">
-                    <Link to={`/users/${props.user.id}`} className="nav-link">{props.user.userName}</Link>
+                    <Link to={`/users/${props.user.id}`} className="nav-link">Hi,{props.user.userName}</Link>
                  </li>
   }else{
     LoginDisplay=<li className="nav-item">
-                    <Link to="/login" className="nav-link">login</Link>
+                    <Link to="/login" className="nav-link">Login</Link>
                   </li>
   }
 
@@ -31,20 +31,15 @@ const NavBarView =(props)=> {
                 Products
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/users/" className="nav-link">
 
-                Users
+            <li className="nav-item">
+              <Link to="/favorite" className="nav-link">
+                Favorite
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/signup" className="nav-link">
                 Sign Up
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/favorite" className="nav-link">
-                Favorite
               </Link>
             </li>
             {LoginDisplay}
