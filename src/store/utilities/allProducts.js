@@ -1,5 +1,5 @@
 import axios from "axios";
-
+const wordArr = ["Laptop", "Camera", "Table"];
 // Action Types
 const FETCH_ALL_PRODUCTS = "FETCH_ALL_PRODUCTS";
 
@@ -12,8 +12,9 @@ const fetchAllProducts = (product) => {
 };
 // Thunk Creators
 export const fetchAllProductsThunk = () => (dispatch) => {
+  const item = wordArr[Math.floor(Math.random() * 3)];
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  const url="https://api.barcodelookup.com/v2/products?search=labtop&formatted=y&key=zv42zbe9jebxudhbmdtq9hor1320xc"
+  const url=`https://api.barcodelookup.com/v2/products?search=${item}&formatted=y&key=zv42zbe9jebxudhbmdtq9hor1320xc`
   return axios
     .get(proxyurl+url)
     .then((res) => res.data.products)

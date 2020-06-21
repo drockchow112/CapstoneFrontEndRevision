@@ -12,21 +12,27 @@ const SearchProductsView = props => {
 
   return (
     <div className="center"> 
+    <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+          <h2 className="display-4">Search Result</h2>
+        </div>
       <div className="container">  
-      <div className="card-deck mb-3">
-        {props.Products.map(product => (
-          <div key={product.barcode_number}>
-            <div className="card mb-4 shadow-sm">
-            <img className="card-img-top" src={product.images} width="200px" alt={product.product_name} />
+      <div className="row row-cols-1 row-cols-md-3" >
+      {props.Products.map(product => (
+          <div key={product.barcode_number} className="col mb-4">
+            <div className=" card h-100 mx-auto">
+              <img
+                className="card-img-top"
+                src={product.images}
+                width="150px"
+                height="300px"
+                alt={product.product_name}
+              />
               <div className="card-body">
                 <Link to={`/products/${product.barcode_number}`}>
-
                   <h5 className="card-title">{product.product_name}</h5>
                 </Link>
-
               </div>
             </div>
-
           </div>
         ))}
       </div>

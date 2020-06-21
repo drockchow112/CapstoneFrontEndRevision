@@ -56,7 +56,9 @@ class LoginFormContainer extends Component {
     return (
       <>
         {/* Can potentially be extracted into its own ErrorMessage component */}
+        <div className="text-danger">
         {this.state.isValidUser ?``: this.state.errors.userName}
+        </div>
         <LoginFormView
           userName={this.state.userName}
           password={this.state.password}

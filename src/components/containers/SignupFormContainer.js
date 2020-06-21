@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { SignupFormView } from "../views";
-import { addUserThunk } from "../../thunks";
+import { addUserThunk,fetchAllUsersThunk } from "../../thunks";
 
 class SignupFormContainer extends Component {
   constructor(props) {
@@ -15,28 +15,36 @@ class SignupFormContainer extends Component {
       errors: {},
     };
   }
+  componentDidMount() {
+    this.props.fetchAllUsers();
+  }
 
   handleChange = (e) => {
-    if (e.target.name === "userName") {
-      this.setState({ userName: e.target.value }, this.validateName);
-      console.log(this.state.userName)
-    } else {
+
       this.setState({
         [e.target.name]: e.target.value,
       });
-    }
   };
 
-  validateName = () => {
-      //check is the userName length great than 5
+  validateUser = () => {
+      //check is the userName length great than 5 and not duplicate username in database
+      const users=this.props.allUsers
     const { userName } = this.state;
     let errors = { ...this.state.errors };
     let isValidName = true;
-    if (userName.length < 6) {
+    if (userName.length < 5) {
       isValidName = false;
-      errors.userName = "Invalid username, please enter more than 5 characters";
+      errors.userName = "Invalid username, please enter more than 4 characters";
     }
+    for(let i=0;i<users.length;i++){
+      if(this.state.userName===users[i].userName){
+        isValidName = false;
+        errors.userName = "Invalid username, duplicate name";
+       break;
+     }
+   }
     if (isValidName) {
+      this.props.addUser(this.state)
       errors.userName = "valid username";
     }
     this.setState({ isValidName, errors });
@@ -44,13 +52,16 @@ class SignupFormContainer extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.isValidName) this.props.addUser(this.state);
+    this.validateUser();
   };
+ 
   render() {
     return (
       <>
         {/* Can potentially be extracted into its own ErrorMessage component */}
+        <div className="text-danger">
         {this.state.isValidName ? "" : this.state.errors.userName}
+        </div>
         <SignupFormView
           userName={this.state.userName}
           password={this.state.password}
@@ -62,15 +73,21 @@ class SignupFormContainer extends Component {
     );
   }
 }
-
+const mapState = (state) => {
+  return {
+    allUsers: state.allUsers,
+  };
+};
 const mapDispatch = (dispatch, ownProps) => {
   return {
+    fetchAllUsers: () => dispatch(fetchAllUsersThunk()),
     addUser: (User) => dispatch(addUserThunk(User, ownProps)),
   };
 };
 
 SignupFormContainer.propTypes = {
+  allUsers: PropTypes.array.isRequired,
   addUser: PropTypes.func.isRequired,
 };
 
-export default connect(null, mapDispatch)(SignupFormContainer);
+export default connect(mapState, mapDispatch)(SignupFormContainer);
