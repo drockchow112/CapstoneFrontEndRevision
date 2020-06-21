@@ -19,9 +19,6 @@ class FavoriteContainer extends Component {
         <button className="btn btn-outline-primary"><Link to="/login">Login</Link></button>
         </div>
     }
-    if (!this.props.allItems.length) {
-      return <div>There are no items</div>;
-    }
     return (
       <div>
         <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
