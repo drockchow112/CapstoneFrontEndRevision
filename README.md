@@ -2,6 +2,7 @@
 
 **This app was designed to search through a database of upc/barcodes and determine which of the user searched products is the cheapest. The api and database used to fetch the data can be found here:  [UPC](https://www.barcodelookup.com/)**
 
+
 ![Cheap Display](public/example.png)
 
 
@@ -23,6 +24,8 @@ Once dependencies are setup its time to start our App.
 ```bash
 $ npm start
 ```
+After starting the app proceed to your browser and wait for app to start and happy searching.
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
