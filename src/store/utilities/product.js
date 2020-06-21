@@ -1,5 +1,6 @@
 import axios from "axios";
-
+const custom = require('./apikey');
+const API_KEY=custom.config.API_KEY
 // Action Types
 const FETCH_PRODUCT = "FETCH_PRODUCT";
 
@@ -15,7 +16,7 @@ const fetchProduct = (product) => {
 // Thunk Creators
 export const fetchProductThunk = (id) => (dispatch) => {
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url=`https://api.barcodelookup.com/v2/products?barcode=${id}&formatted=y&key=5r1upgmsjfs59ofc7a47pgei2fuvuu`
+    const url=`https://api.barcodelookup.com/v2/products?barcode=${id}&formatted=y&key=${API_KEY}`
   return axios
     .get(proxyurl+url)
     .then((res) => res.data.products[0])
