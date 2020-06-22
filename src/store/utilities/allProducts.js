@@ -1,7 +1,7 @@
 import axios from "axios";
 const custom = require('./apikey');
 const API_KEY=custom.config.API_KEY
-const wordArr = ["Laptop", "Camera", "Table"];
+const wordArr = [ "Camera","PANCIL"];
 // Action Types
 const FETCH_ALL_PRODUCTS = "FETCH_ALL_PRODUCTS";
 

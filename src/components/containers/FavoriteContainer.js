@@ -14,7 +14,7 @@ class FavoriteContainer extends Component {
     if(!this.props.user.id){
       return <div>
         <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-          <h2 className="display-4">You Haven't Login Yet</h2>
+          <h2 className="display-4">You Haven't Logged in Yet</h2>
         </div>
         <button className="btn btn-outline-primary"><Link to="/login">Login</Link></button>
         </div>
