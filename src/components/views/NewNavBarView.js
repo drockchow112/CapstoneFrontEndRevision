@@ -6,7 +6,7 @@ class NewNavBarView extends Component {
     return (
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-info">
         <a class="navbar-brand" href="#">
-          APP_NAME or APP_LOGO
+          Price Comparison
         </a>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
