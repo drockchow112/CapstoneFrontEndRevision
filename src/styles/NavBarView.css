@@ -1,0 +1,8 @@
+nav {
+    display: flex;
+    border: 1px solid gray;
+}
+
+input {
+    border: 1px solid black;
+}
